@@ -1,0 +1,7 @@
+			cable
+		Gigue		Latence		taux de perte	Eligibilit
+mpeg 4M		0.614ms		2.5ms		0%		ok			
+SDTV 20M	0.576ms		1ms		0%		ok	
+hd 60M		0.529ms		1ms		0%		ok	
+192k		0.54ms		0.5ms		0%			
+380k		0.804ms		0.5ms		0%			
