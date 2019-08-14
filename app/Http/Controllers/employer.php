@@ -687,7 +687,7 @@ class employer extends Controller
         $id_post = $data['id_post'];
         $post = Post::findOrFail($id_post);
         $resume = Resume::where('id_cand',  Auth::user()->id)->first();
-      //  Mail::to($resume->email)->send(new CandidatureMail($resume, $post));
+         Mail::to($resume->email)->send(new CandidatureMail($resume, $post));
 
         $status = 'Votre candidature a été enregistrée avec succès';
         $Allcountries = \App\Country::all();
@@ -827,7 +827,7 @@ class employer extends Controller
         $id_post = $data['id_post'];
         $post = Post::findOrFail($id_post);
         $resume = Resume::where('id_cand',  $id)->first();
-      //  Mail::to($resume->email)->send(new CandidatureMail($resume, $post));
+        Mail::to($resume->email)->send(new CandidatureMail($resume, $post));
 
         $status = 'Votre candidature a été enregistré avec succès';
 
