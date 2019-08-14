@@ -8,6 +8,8 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Resume;
 use App\Post;
+
+use Illuminate\Support\Facades\View;
 class CandidatureMail extends Mailable
 {
     use Queueable, SerializesModels;
@@ -31,7 +33,7 @@ class CandidatureMail extends Mailable
      * @return $this
      */
     public function build()
-    {
-        return $this->view('emails.candidatureMail');
+    {      return \View::make('emails.candidatureMail');
+      //  return $this->view('emails.candidatureMail');
     }
 }
