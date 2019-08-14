@@ -24,7 +24,7 @@
                     <img class="image" src="{{asset('images')}}/{{ Auth::user()->photoUrl }}" onerror="this.src='{{asset('images/briefcase.png')}}'">
                   </div>
                   <div class="file-upload">            
-                    <input type="file" name="image[]" class="file-input">Changer
+                    <input type="file" name="image" class="file-input">Changer
                   </div>
                 </div>
                   <div class="dashboard-section basic-info-input">
