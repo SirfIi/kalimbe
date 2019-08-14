@@ -16,7 +16,7 @@
             <div class="dashboard-container">
               <div class="dashboard-content-wrapper">
               <!-- -->
-                <form   method="POST" action="/entreprise/image/update" class="dashboard-form" enctype="multipart/form-data">
+                <form   method="POST" action="{{ route('ent_image_update') }}" class="dashboard-form" enctype="multipart/form-data">
                 {!! csrf_field() !!}
 				<div class="dashboard-section upload-profile-photo"  style="display: none">
                     <div class="update-photo">

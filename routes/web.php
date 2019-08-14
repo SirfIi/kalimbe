@@ -217,7 +217,8 @@ Route::get('/dashboard', array('as'=>'dashboard','uses'=>'employer@redirect'));
 
 Route::post('/entreprise/update', array('as'=>'ent_update','uses'=>'employer@update'));
 Route::post('/entreprise/img/update', array('as'=>'ent_img_update','uses'=>'employer@empImgUpdate'));
-Route::post('/public/entreprise/image/update', 'ImagesController@empImgUpdate');
+Route::post('/entreprise/image/update', array('as'=>'ent_image_update','uses'=>'ImagesController@empImgUpdate'));
+
 Route::post('/candidat/update', array('as'=>'cand_update','uses'=>'employer@cand_update'));
 
 Route::post('password/reset',array('as'=>'password.reset','uses'=>'employer@reset'));
