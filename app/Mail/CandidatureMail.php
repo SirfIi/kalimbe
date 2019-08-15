@@ -33,7 +33,7 @@ class CandidatureMail extends Mailable
      * @return $this
      */
     public function build()
-    {      return \View::make('emails.candidatureMail');
-      //  return $this->view('emails.candidatureMail');
+    {    
+       return view('emails.CandidatureMail');
     }
 }
