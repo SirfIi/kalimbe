@@ -4,7 +4,7 @@
   if ($("#view-chart").length > 0) {
     var ctx = document.getElementById("view-chart").getContext('2d');
     var myChart = new Chart(ctx, {
-      type: 'line',
+      type: 'bars',
       data: {
         labels: mois,
         datasets: [{
