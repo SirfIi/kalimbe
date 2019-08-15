@@ -101,13 +101,13 @@ class employer extends Controller
 
     public function update(Request $req)
     {
-        // $name =$req['image_name']; 
+        $name =$req['image_name']; 
         
-        // if ($req->hasFile('image')) {
-        //     $file = $req->file('image');
-        //     $name = $file->getClientOriginalName();
-        //     $file->move(public_path() . '/images/', $name);
-        // }
+        if ($req->hasFile('image')) {
+            $file = $req->file('image');
+            $name = $file->getClientOriginalName();
+            $file->move(public_path() . '/images/', $name);
+        }
 
       
         DB::table('users')
@@ -122,7 +122,7 @@ class employer extends Controller
             'twitter' =>  $req['twitter'],
             'google' =>  $req['google'],
             'linkedin' =>  $req['linkedin'],
-          //  'photoUrl' => $name,
+            'photoUrl' => $name,
             'taille' =>  $req['taille'],
             'adresse' =>  $req['adresse'],
             'ville' =>  $req['ville'],

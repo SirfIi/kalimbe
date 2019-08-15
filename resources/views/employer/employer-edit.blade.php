@@ -15,40 +15,27 @@
           <div class="col">
             <div class="dashboard-container">
               <div class="dashboard-content-wrapper">
-              <!-- -->
-                <form   method="POST" action="{{ route('ent_image_update') }}" class="dashboard-form" enctype="multipart/form-data">
-                {!! csrf_field() !!}
-				<div class="dashboard-section upload-profile-photo"  style="display: none">
-                    <div class="update-photo">
-                      <img class="image" src="{{asset('images')}}/{{ $ent[0]->photoUrl }}" onerror="this.src='images/briefcase.png';">
-                      <input type="text" id="image" name="image_name" value="{{ $ent[0]->photoUrl }}" >
-                    </div>
-				  </div>
-				  
-                  <div class="dashboard-section upload-profile-photo">
-                    <div class="update-photo">
-                      <img class="image" src="{{asset('images')}}/{{ $ent[0]->photoUrl }}" onerror="this.src='images/briefcase.png';">
-                      Changer
-                    </div>
-                    <div class="file-upload">            
-                      <input type="file" id="image" name="image" class="file-input">Changer
-                    </div>
-				  </div>
-				  
-				  <div class="dashboard-section basic-info-input">
-                    <label class="col-sm-3 col-form-label"></label>
-                    <div class="form-group row">
-                      <div class="col-sm-9">
-                        <button class="button">Sauvegarder</button>
-                      </div>
-                    </div>
-                  </div>
-				</form> 
-				
 				<form   method="POST" action="{{ route('ent_update') }}" class="dashboard-form" enctype="multipart/form-data">
-                {!! csrf_field() !!}
+				{!! csrf_field() !!}
+					<div class="dashboard-section upload-profile-photo"  style="display: none">
+						<div class="update-photo">
+						<img class="image" src="{{asset('images')}}/{{ $ent[0]->photoUrl }}" onerror="this.src='images/briefcase.png';">
+						<input type="text" id="image" name="image_name" value="{{ $ent[0]->photoUrl }}" >
+						</div>
+					</div>
+					
+					<div class="dashboard-section upload-profile-photo">
+						<div class="update-photo">
+						<img class="image" src="{{asset('images')}}/{{ $ent[0]->photoUrl }}" onerror="this.src='images/briefcase.png';">
+						Changer
+						</div>
+						<div class="file-upload">            
+						<input type="file" id="image" name="image" class="file-input">Changer
+						</div>
+					</div>
+				
 
-                  <div class="dashboard-section basic-info-input">
+                  	<div class="dashboard-section basic-info-input">
                     <h4><i data-feather="user-check"></i>Informations sur votre Entreprise</h4>
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Nom de l'Entreprise</label>
