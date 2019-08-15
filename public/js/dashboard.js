@@ -52,6 +52,7 @@
                 fontSize: 14,
                 fontFamily: 'Circular Std Book',
                 fontColor: '#71748d',
+                beginAtZero:true
             }
         }]
     }

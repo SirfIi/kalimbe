@@ -782,10 +782,10 @@
                             <div class="form-group">
                               <div class="form-group">
                                 <select name="level_1" class="form-control"  id="note" >
-                                  <option value="1" >Junior</option>
-                                  <option value="2" >Courant</option>
-                                  <option value="3" >Intermédiare</option>
-                                  <option value="4" >Expert</option>
+                                   <option value="1" >Je peux initier</option>
+                                   <option value="2" >Je réalise bien</option>
+                                   <option value="3" >Je maitrise</option>
+                                   <option value="4" >J’excelle</option>
                                 </select>
                               </div>
                             </div>
@@ -831,10 +831,10 @@
                                 <div class="form-group">
                                   <div class="form-group">
                                     <select name="level_2"class="form-control" id="note">
-                                      <option value="1" >Junior</option>
-                                      <option value="2" >Courant</option>
-                                      <option value="3" >Intermédiare</option>
-                                      <option value="4" >Expert</option>
+                                      <option value="1" >Je peux initier</option>
+                                       <option value="2" >Je réalise bien</option>
+                                      <option value="3" >Je maitrise</option>
+                                      <option value="4" >J’excelle</option>
                                     </select>
                                   </div>
                                 </div>
@@ -878,10 +878,10 @@
                                 <div class="form-group">
                                   <div class="form-group">
                                     <select name="level_3"class="form-control" id="note">
-                                      <option value="1" >Junior</option>
-                                      <option value="2" >Courant</option>
-                                      <option value="3" >Intermédiare</option>
-                                      <option value="4" >Expert</option>
+                                      <option value="1" >Je peux initier</option>
+                                       <option value="2" >Je réalise bien</option>
+                                      <option value="3" >Je maitrise</option>
+                                      <option value="4" >J’excelle</option>
                                     </select>
                                   </div>
                                 </div>
@@ -928,10 +928,10 @@
                                 <div class="form-group">
                                   <div class="form-group">
                                     <select name="level_4" class="form-control" id="note">
-                                      <option value="1" >Junior</option>
-                                      <option value="2" >Courant</option>
-                                      <option value="3" >Intermédiare</option>
-                                      <option value="4" >Expert</option>
+                                      <option value="1" >Je peux initier</option>
+                                       <option value="2" >Je réalise bien</option>
+                                      <option value="3" >Je maitrise</option>
+                                      <option value="4" >J’excelle</option>
                                     </select>
                                   </div>
                                 </div>
@@ -977,10 +977,10 @@
                                 <div class="form-group">
                                   <div class="form-group">
                                     <select name="level_5" class="form-control" id="note" >
-                                      <option value="1" >Junior</option>
-                                      <option value="2" >Courant</option>
-                                      <option value="3" >Intermédiare</option>
-                                      <option value="4" >Expert</option>
+                                      <option value="1" >Je peux initier</option>
+                                       <option value="2" >Je réalise bien</option>
+                                      <option value="3" >Je maitrise</option>
+                                      <option value="4" >J’excelle</option>
                                     </select>
                                   </div>
                                 </div>
