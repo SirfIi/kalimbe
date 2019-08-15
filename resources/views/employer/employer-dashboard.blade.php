@@ -45,8 +45,8 @@
   var jobs = {!! json_encode($jobs) !!};
  
   var mois = [];
-  var mois_app = ['0']; 
-  var mois_job = ['0'];     
+  var mois_app = []; 
+  var mois_job = [];     
   var nbApp = []; 
   var nbJobs = []; 
 
