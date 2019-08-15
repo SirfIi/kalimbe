@@ -17,8 +17,8 @@
         {
           label: '# Emplois',
           data: nbJobs,
-          backgroundColor: 'rgba(248, 109, 30, 0.5 )',
-          borderColor: "rgba(248, 109, 30, 0.7)",
+          backgroundColor: 'rgba(255, 64, 123, 0.5 )',
+          borderColor: "rgba(255, 64, 123, 0.7)",
           borderWidth: 2
         }]
       },
