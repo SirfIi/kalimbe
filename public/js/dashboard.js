@@ -10,52 +10,52 @@
         datasets: [{
           label: '# Applications',
           data: nbApp,
-          fill: false,
-          borderColor: [
-            'rgba(36, 109, 248, 1 )'
-          ],
-          borderWidth: 1
+          backgroundColor: 'rgba(36, 109, 248, 0.5 )',
+          borderColor: "rgba(36, 109, 248, 0.7)",
+          borderWidth: 2
         },
         {
           label: '# Emplois',
           data: nbJobs,
-          fill: false,
-          lineTension: 0.05,
-          borderColor: [
-            ' #DC143C'
-          ],
-          borderWidth: 1
+          backgroundColor: 'rgba(36, 109, 248, 0.5 )',
+          borderColor: "rgba(36, 109, 248, 0.7)",
+          borderWidth: 2
         }]
       },
       options: {
-        title: {
-          display: false
-        },
-        gridLines: {
-          display: false
-        },
-        legend: {
-          display: true
-        },
-        tooltips: {
-          mode: 'dataset',
-          intersect: true
-        },
-        responsive: true,
         scales: {
-          xAxes: [ {
+            yAxes: [{
+
+            }]
+        },
+            legend: {
+        display: true,
+        position: 'bottom',
+
+        labels: {
+            fontColor: '#71748d',
+            fontFamily: 'Circular Std Book',
+            fontSize: 14,
+        }
+    },
+
+    scales: {
+        xAxes: [{
             ticks: {
-                beginAtZero: false
+                fontSize: 14,
+                fontFamily: 'Circular Std Book',
+                fontColor: '#71748d',
             }
         }],
-          yAxes: [
-          {
+        yAxes: [{
             ticks: {
-                beginAtZero: false
+                fontSize: 14,
+                fontFamily: 'Circular Std Book',
+                fontColor: '#71748d',
             }
         }]
-        }
-      }
+    }
+}
     });
   }
 
