@@ -362,7 +362,7 @@
                                     				<div class="mt-0 terms">
                                                         <input class="custom-radio" type="checkbox" id="radio-ec" name="elim_secteur">
                                                         <label for="radio-ec">
-                                                          <span class="dot"></span> Éliminatoire
+                                                          <span class="dot"></span>Éliminatoire
                                                         </label>
                                                       </div>
 													</div>  
