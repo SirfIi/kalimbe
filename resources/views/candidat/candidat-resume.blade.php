@@ -77,13 +77,13 @@
                                 <div class="form-group">
                                   <select name="niveau_etude" class="form-control" >
                                     <option>{{$resume->niveau_etude}}</option>
-                                    <option>Bac</option>
-                                    <option>Bac + 2</option>
-                                    <option>Bac + 3</option>
-                                    <option>Bac + 4</option>
-                                    <option>Bac + 5 </option>
-                                    <option>Bac + 8</option>
-                                    <option>Bac + 8 et plus </option>
+                                    <option value="Bac">Bac</option>
+                                    <option value="Bac + 2">Bac + 2</option>
+                                    <option value="Bac + 3">Bac + 3</option>
+                                    <option value="Bac + 4">Bac + 4</option>
+                                    <option value="Bac + 5">Bac + 5 </option>
+                                    <option value="Bac + 8">Bac + 8</option>
+                                    <option value="Bac + 8 et plus">Bac + 8 et plus </option>
                                   </select>
                                   <i class="fa fa-caret-down"></i>
                                 </div>
@@ -96,45 +96,44 @@
                                 <div class="form-group">
                                   <div class="form-group">
                                     <select name="domaine_etude" class="form-control">
-                                      <option>{{$resume->domaine_etude}}</option>
-                                      <option  value="administration" class="administration">Administration</option>
-				    					    		<option  value="assurance-qualite" class="assurance-qualite">Assurance qualité</option>
-				    					    		<option  value="banque" class="banque">Banque</option>
-				    					    		<option  value="construction" class="construction">Construction</option>
-				    					    		<option  value="commercial" class="commercial">Commercial</option>
-				    					    		<option  value="communication" class="communication">Communication</option>
-				    					    		<option  value="comptabilite-finance" class="comptabilite-finance">Comptabilité / Finance</option>
-				    					    		<option  value="conseil" class="conseil">Conseil</option>
-				    					    		<option  value="econometrie" class="econometrie">Econométrie</option>
-				    					    		<option  value="education-formation" class="education-formation">Education / Formation</option>
-				    					    		<option  value="finance-banque" class="finance-banque">Finance/ Banque</option>
-				    					    		<option  value="gestion" class="gestion">Gestion</option>
-				    					    		<option  value="gestion-de-projets" class="gestion-de-projets">Gestion de projets</option>
-				    					    		<option  value="gestion-des-comptes" class="gestion-des-comptes">Gestion des comptes</option>
-				    					    		<option  value="hotellerie" class="hotellerie">Hôtellerie</option>
-				    					    		<option  value="ingenierie" class="ingenierie">Ingénierie</option>
-				    					    		<option  value="it-logiciel" class="it-logiciel">IT / Logiciel</option>
-				    					    		<option  value="juridique" class="juridique">Juridique</option>
-				    					    		<option  value="logistique" class="logistique">Logistique</option>
-				    					    		<option  value="management-dorganisation" class="management-dorganisation">Management d'organisation</option>
-				    					    		<option  value="marketing" class="marketing">Marketing</option>
-				    					    		<option  value="metier-qualifie" class="metier-qualifie">Métier qualifié</option>
-				    					    		<option  value="maintenance-reparation" class="maintenance-reparation">Maintenance / Réparation</option>
-				    					    		<option  value="production" class="production">Production</option>
-				    					    		<option  value="ressources-humaines" class="ressources-humaines">Ressources humaines</option>
-				    					    		<option  value="redaction-edition" class="redaction-edition">Rédaction / Edition</option>
-				    					    		<option  value="risque-management" class="risque-management">Risque / Management</option>
-				    					    		<option  value="sante" class="sante">Santé</option>
-				    					    		<option  value="sciences-technologie" class="sciences-technologie">Sciences / Technologie</option>
-				    					    		<option  value="sciences-politiques" class="sciences-politiques">Sciences politiques</option>
-				    					    		<option  value="sciences-sociales" class="sciences-sociales">Sciences sociales</option>
-				    					    		<option  value="securite" class="securite">Sécurité</option>
-				    					    		<option  value="service-client" class="service-client">Service client</option>
-				    					    		<option  value="statistiques" class="statistiques">Statistiques</option>
-				    					    		<option  value="traduction" class="traduction">Traduction</option>
-				    					    		<option  value="ventes" class="ventes">Ventes</option>
-				    					    		<option  value="autre" class="autre">Autre</option>
-
+                                      	<option>{{$resume->domaine_etude}}</option>
+									  	<option  value="administration" class="administration">Administration</option>
+										<option  value="assurance-qualite" class="assurance-qualite">Assurance qualité</option>
+										<option  value="banque" class="banque">Banque</option>
+				    					<option  value="construction" class="construction">Construction</option>
+				    					<option  value="commercial" class="commercial">Commercial</option>
+				    					<option  value="communication" class="communication">Communication</option>
+				    					<option  value="comptabilite-finance" class="comptabilite-finance">Comptabilité / Finance</option>
+				    					<option  value="conseil" class="conseil">Conseil</option>
+				    					<option  value="econometrie" class="econometrie">Econométrie</option>
+				    					<option  value="education-formation" class="education-formation">Education / Formation</option>
+				    					<option  value="finance-banque" class="finance-banque">Finance/ Banque</option>
+				    					<option  value="gestion" class="gestion">Gestion</option>
+				    					<option  value="gestion-de-projets" class="gestion-de-projets">Gestion de projets</option>
+				    					<option  value="gestion-des-comptes" class="gestion-des-comptes">Gestion des comptes</option>
+				    					<option  value="hotellerie" class="hotellerie">Hôtellerie</option>
+										<option  value="ingenierie" class="ingenierie">Ingénierie</option>
+										<option  value="it-logiciel" class="it-logiciel">IT / Logiciel</option>
+										<option  value="juridique" class="juridique">Juridique</option>
+										<option  value="logistique" class="logistique">Logistique</option>
+				    					<option  value="management-dorganisation" class="management-dorganisation">Management d'organisation</option>
+				    					<option  value="marketing" class="marketing">Marketing</option>
+				    					<option  value="metier-qualifie" class="metier-qualifie">Métier qualifié</option>
+				    					<option  value="maintenance-reparation" class="maintenance-reparation">Maintenance / Réparation</option>
+				    					<option  value="production" class="production">Production</option>
+				    					<option  value="ressources-humaines" class="ressources-humaines">Ressources humaines</option>
+				    					<option  value="redaction-edition" class="redaction-edition">Rédaction / Edition</option>
+				    					<option  value="risque-management" class="risque-management">Risque / Management</option>
+				    					<option  value="sante" class="sante">Santé</option>
+				    					<option  value="sciences-technologie" class="sciences-technologie">Sciences / Technologie</option>
+				    					<option  value="sciences-politiques" class="sciences-politiques">Sciences politiques</option>
+				    					<option  value="sciences-sociales" class="sciences-sociales">Sciences sociales</option>
+				    					<option  value="securite" class="securite">Sécurité</option>    		
+				    					<option  value="service-client" class="service-client">Service client</option>
+				    					<option  value="statistiques" class="statistiques">Statistiques</option>
+				    					<option  value="traduction" class="traduction">Traduction</option>
+				    					<option  value="ventes" class="ventes">Ventes</option>
+				    					<option  value="autre" class="autre">Autre</option>
                                     </select>
                                     <i class="fa fa-caret-down"></i>
                                   </div>
@@ -667,7 +666,7 @@
                               <div class="col-md-8">
                                 <div class="form-group">
                                   <div class="form-group">
-                                    <input type="text" class="form-control"  placeholder="ex: Relever des défis" name="motivation">
+                                    <input type="text" class="form-control"  placeholder="ex: Relever des défis" value="{{$resume->motivation}}" name="motivation">
                                   </div>
                                 </div>
                           </div>
@@ -677,12 +676,11 @@
                               <div class="col-md-9">
                                 <div class="form-group">
                                   <div class="form-group">
-                                    <select class="form-control" name="disponobilite">
-                                      <option>{{$resume->disponobilite}}</option>
-                                      <option value="immediatement"> Immédiatement </option>
-                                      <option value="1 mois"> 1 mois </option>
-                                      <option value="1 a 3 mois"> 1 a 3 mois </option>
-                                      <option value="3 a 6 mois "> 3 a 6 mois </option>
+                                    <select class="form-control" name="disponibilite">
+                                      <option value="immediatement" <?php if($resume->disponibilite == 'immediatement') echo 'selected' ?>> Immédiatement </option>
+                                      <option value="1 mois" <?php if($resume->disponibilite == '1 mois') echo 'selected'  ?> > 1 mois </option>
+                                      <option value="1 a 3 mois" <?php if($resume->disponibilite == '1 a 3 mois') echo 'selected' ?>> 1 a 3 mois </option>
+                                      <option value="3 a 6 mois" <?php if($resume->disponibilite == '3 a 6 mois') echo 'selected' ?>> 3 a 6 mois </option>
                                     </select>
                                     <i class="fa fa-caret-down"></i>
                                   </div>

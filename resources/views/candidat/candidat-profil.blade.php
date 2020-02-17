@@ -24,7 +24,7 @@
                     <img class="image" src="{{asset('images')}}/{{ Auth::user()->photoUrl }}" onerror="this.src='{{asset('images/briefcase.png')}}'">
                   </div>
                   <div class="file-upload">            
-                    <input type="file" name="image" class="file-input">Changer
+                    <input type="file" onchange="sizeValidation()" id="image" name="image" class="file-input">Changer
                   </div>
                 </div>
                   <div class="dashboard-section basic-info-input">
@@ -443,5 +443,17 @@
           </div>
         </div>
       </div>
-    </div>
+	</div>
+	<script type="text/javascript">
+		function sizeValidation(){
+			
+			var img= document.getElementById("image");
+			console.log(img.files[0].size);
+			if(img.files[0].size > 2000000)
+			{
+				alert("L'image est trop grande"); 
+				document.getElementById('image').value = "";
+			}
+		}
+    </script>
 @endsection

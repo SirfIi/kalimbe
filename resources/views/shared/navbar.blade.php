@@ -54,9 +54,11 @@
                       <a href="{{ url('candidate-dashboard') }}"   aria-haspopup="false" aria-expanded="false">Mon espace</a>
                     </li>
                     @else
-                    <li class="menu-item dropdown">
-                      <a href="{{ url('cv-theque') }}"   aria-haspopup="false" aria-expanded="false">C.V-Thèque</a>
-                    </li>
+                    @if (Auth::user()->type == 10)
+                      <li class="menu-item dropdown">
+                        <a href="{{ url('cv-theque') }}"   aria-haspopup="false" aria-expanded="false">C.V-Thèque</a>
+                      </li>
+                    @endif
                     <li class="menu-item dropdown">
                       <a href="{{ url('employer') }}"   aria-haspopup="false" aria-expanded="false">Mon espace</a>
                     </li>

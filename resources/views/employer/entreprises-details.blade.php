@@ -66,7 +66,7 @@
                             </div>
                           </div>
                           <div class="more">
-                            <p class="deadline">Deadline: {{$p->date_exp}}</p>
+                            <p class="deadline">Date d'expiration: {{$p->date_exp}}</p>
                           </div>
                         </div>
                       </div>

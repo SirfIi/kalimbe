@@ -518,215 +518,9 @@
                             <div class="form-group">
                               <select  name="nationalite" class="form-control">
                               <option>Toute Nationalité</option>
-                              <option  value="afghane" class="afghane">Afghane</option>
-				    					    		<option  value="albanaise" class="albanaise">Albanaise</option>
-				    					    		<option  value="algerienne" class="algerienne">Algerienne</option>
-				    					    		<option  value="allemande" class="allemande">Allemande</option>
-				    					    		<option  value="americaine" class="americaine">Americaine</option>
-				    					    		<option  value="andorrane" class="andorrane">Andorrane</option>
-				    					    		<option  value="angolaise" class="angolaise">Angolaise</option>
-				    					    		<option  value="antiguaise-et-barbudienne" class="antiguaise-et-barbudienne">Antiguaise et barbudienne</option>
-				    					    		<option  value="argentine" class="argentine">Argentine</option>
-				    					    		<option  value="armenienne" class="armenienne">Armenienne</option>
-				    					    		<option  value="arubaise" class="arubaise">Arubaise</option>
-				    					    		<option  value="australienne" class="australienne">Australienne</option>
-				    					    		<option  value="autrichienne" class="autrichienne">Autrichienne</option>
-				    					    		<option  value="azerbaidjanaise" class="azerbaidjanaise">Azerbaïdjanaise</option>
-				    					    		<option  value="bahamienne" class="bahamienne">Bahamienne</option>
-				    					    		<option  value="bahreinienne" class="bahreinienne">Bahreinienne</option>
-				    					    		<option  value="bangladaise" class="bangladaise">Bangladaise</option>
-				    					    		<option  value="barbadienne" class="barbadienne">Barbadienne</option>
-				    					    		<option  value="belge" class="belge">Belge</option>
-				    					    		<option  value="belizienne" class="belizienne">Belizienne</option>
-				    					    		<option  value="beninoise" class="beninoise">Beninoise</option>
-				    					    		<option  value="bermudienne" class="bermudienne">Bermudienne</option>
-				    					    		<option  value="bhoutanaise" class="bhoutanaise">Bhoutanaise</option>
-				    					    		<option  value="bielarusse" class="bielarusse">Bielarusse</option>
-				    					    		<option  value="birmane" class="birmane">Birmane</option>
-				    					    		<option  value="bissau-guineenne" class="bissau-guineenne">Bissau-Guineenne</option>
-				    					    		<option  value="bolivienne" class="bolivienne">Bolivienne</option>
-				    					    		<option  value="bosniaque" class="bosniaque">Bosniaque</option>
-				    					    		<option  value="botswanaise" class="botswanaise">Botswanaise</option>
-				    					    		<option  value="brazza-congolaise" class="brazza-congolaise">Brazza-Congolaise</option>
-				    					    		<option  value="bresilienne" class="bresilienne">Bresilienne</option>
-				    					    		<option  value="britannique" class="britannique">Britannique</option>
-				    					    		<option  value="bruneienne" class="bruneienne">Bruneienne</option>
-				    					    		<option  value="bulgare" class="bulgare">Bulgare</option>
-				    					    		<option  value="burkinabee" class="burkinabee">Burkinabee</option>
-				    					    		<option  value="burundaise" class="burundaise">Burundaise</option>
-				    					    		<option  value="caimanien" class="caimanien">Caïmanien</option>
-				    					    		<option  value="cambodgienne" class="cambodgienne">Cambodgienne</option>
-				    					    		<option  value="camerounaise" class="camerounaise">Camerounaise</option>
-				    					    		<option  value="canadienne" class="canadienne">Canadienne</option>
-				    					    		<option  value="cap-verdienne" class="cap-verdienne">Cap-verdienne</option>
-				    					    		<option  value="centrafricaine" class="centrafricaine">Centrafricaine</option>
-				    					    		<option  value="chilienne" class="chilienne">Chilienne</option>
-				    					    		<option  value="chinoise" class="chinoise">Chinoise</option>
-				    					    		<option  value="chypriote" class="chypriote">Chypriote</option>
-				    					    		<option  value="colombienne" class="colombienne">Colombienne</option>
-				    					    		<option  value="comorienne" class="comorienne">Comorienne</option>
-				    					    		<option  value="congolaise" class="congolaise">Congolaise</option>
-				    					    		<option  value="cookienne" class="cookienne">Cookienne</option>
-				    					    		<option  value="costaricaine" class="costaricaine">Costaricaine</option>
-				    					    		<option  value="croate" class="croate">Croate</option>
-				    					    		<option  value="cubaine" class="cubaine">Cubaine</option>
-				    					    		<option  value="danoise" class="danoise">Danoise</option>
-				    					    		<option  value="djiboutienne" class="djiboutienne">Djiboutienne</option>
-				    					    		<option  value="dominicaine" class="dominicaine">Dominicaine</option>
-				    					    		<option  value="dominiquaise" class="dominiquaise">Dominiquaise</option>
-				    					    		<option  value="egyptienne" class="egyptienne">Egyptienne</option>
-				    					    		<option  value="emirienne" class="emirienne">Emirienne</option>
-				    					    		<option  value="equato-guineenne" class="equato-guineenne">Equato-guineenne</option>
-				    					    		<option  value="equatorienne" class="equatorienne">Equatorienne</option>
-				    					    		<option  value="erythreenne" class="erythreenne">Erythreenne</option>
-				    					    		<option  value="espagnole" class="espagnole">Espagnole</option>
-				    					    		<option  value="est-timorais" class="est-timorais">Est-Timorais</option>
-				    					    		<option  value="estonienne" class="estonienne">Estonienne</option>
-				    					    		<option  value="ethiopienne" class="ethiopienne">Ethiopienne</option>
-				    					    		<option  value="feringienne" class="feringienne">Féringienne</option>
-				    					    		<option  value="fidjienne" class="fidjienne">Fidjienne</option>
-				    					    		<option  value="finlandaise" class="finlandaise">Finlandaise</option>
-				    					    		<option  value="francaise" class="francaise">Française</option>
-				    					    		<option  value="gabonnaise" class="gabonnaise">Gabonnaise</option>
-				    					    		<option  value="gambienne" class="gambienne">Gambienne</option>
-				    					    		<option  value="georgienne" class="georgienne">Georgienne</option>
-				    					    		<option  value="ghaneenne" class="ghaneenne">Ghaneenne</option>
-				    					    		<option  value="gibraltarienne" class="gibraltarienne">Gibraltarienne</option>
-				    					    		<option  value="grecque" class="grecque">Grecque</option>
-				    					    		<option  value="grenadinne" class="grenadinne">Grenadinne</option>
-				    					    		<option  value="groenlandaise" class="groenlandaise">Groenlandaise</option>
-				    					    		<option  value="guadeloupeenne" class="guadeloupeenne">Guadeloupeenne</option>
-				    					    		<option  value="guatemalteque" class="guatemalteque">Guatemalteque</option>
-				    					    		<option  value="guineenne" class="guineenne">Guineenne</option>
-				    					    		<option  value="guyanaise" class="guyanaise">Guyanaise</option>
-				    					    		<option  value="guyanienne" class="guyanienne">Guyanienne</option>
-				    					    		<option  value="haitienne" class="haitienne">Haitienne</option>
-				    					    		<option  value="hondurienne" class="hondurienne">Hondurienne</option>
-				    					    		<option  value="hongkongais" class="hongkongais">Hongkongais</option>
-				    					    		<option  value="hongroise" class="hongroise">Hongroise</option>
-				    					    		<option  value="indienne" class="indienne">Indienne</option>
-				    					    		<option  value="indonesienne" class="indonesienne">Indonesienne</option>
-				    					    		<option  value="irakienne" class="irakienne">Irakienne</option>
-				    					    		<option  value="iranienne" class="iranienne">Iranienne</option>
-				    					    		<option  value="irlandaise" class="irlandaise">Irlandaise</option>
-				    					    		<option  value="islandaise" class="islandaise">Islandaise</option>
-				    					    		<option  value="israelienne" class="israelienne">Israélienne</option>
-				    					    		<option  value="italienne" class="italienne">Italienne</option>
-				    					    		<option  value="ivoirienne" class="ivoirienne">Ivoirienne</option>
-				    					    		<option  value="jamaicaine" class="jamaicaine">Jamaicaine</option>
-				    					    		<option  value="japonnaise" class="japonnaise">Japonnaise</option>
-				    					    		<option  value="jordanienne" class="jordanienne">Jordanienne</option>
-				    					    		<option  value="kazakhstanaise" class="kazakhstanaise">Kazakhstanaise</option>
-				    					    		<option  value="kenyane" class="kenyane">Kenyane</option>
-				    					    		<option  value="kirghize" class="kirghize">Kirghize</option>
-				    					    		<option  value="kiribatienne" class="kiribatienne">Kiribatienne</option>
-				    					    		<option  value="koweitienne" class="koweitienne">Koweïtienne</option>
-				    					    		<option  value="laotienne" class="laotienne">Laotienne</option>
-				    					    		<option  value="lesothane" class="lesothane">Lesothane</option>
-				    					    		<option  value="lettone" class="lettone">Lettone</option>
-				    					    		<option  value="libanaise" class="libanaise">Libanaise</option>
-				    					    		<option  value="liberienne" class="liberienne">Liberienne</option>
-				    					    		<option  value="libyenne" class="libyenne">Libyenne</option>
-				    					    		<option  value="liechtensteinoise" class="liechtensteinoise">Liechtensteinoise</option>
-				    					    		<option  value="lituanienne" class="lituanienne">Lituanienne</option>
-				    					    		<option  value="luxembourgeoise" class="luxembourgeoise">Luxembourgeoise</option>
-				    					    		<option  value="macanaise" class="macanaise">Macanaise</option>
-				    					    		<option  value="macedonienne" class="macedonienne">Macedonienne</option>
-				    					    		<option  value="mahoraise" class="mahoraise">Mahoraise</option>
-				    					    		<option  value="malaisienne" class="malaisienne">Malaisienne</option>
-				    					    		<option  value="malawienne" class="malawienne">Malawienne</option>
-				    					    		<option  value="maldivienne" class="maldivienne">Maldivienne</option>
-				    					    		<option  value="malgache" class="malgache">Malgache</option>
-				    					    		<option  value="malienne" class="malienne">Malienne</option>
-				    					    		<option  value="malouinne" class="malouinne">Malouinne</option>
-				    					    		<option  value="maltaise" class="maltaise">Maltaise</option>
-				    					    		<option  value="marocaine" class="marocaine">Marocaine</option>
-				    					    		<option  value="martiniquaise" class="martiniquaise">Martiniquaise</option>
-				    					    		<option  value="mauricienne" class="mauricienne">Mauricienne</option>
-				    					    		<option  value="mauritanienne" class="mauritanienne">Mauritanienne</option>
-				    					    		<option  value="mexicaine" class="mexicaine">Mexicaine</option>
-				    					    		<option  value="moldave" class="moldave">Moldave</option>
-				    					    		<option  value="monegasque" class="monegasque">Monegasque</option>
-				    					    		<option  value="mongolienne" class="mongolienne">Mongolienne</option>
-				    					    		<option  value="mozambicaine" class="mozambicaine">Mozambicaine</option>
-				    					    		<option  value="namibienne" class="namibienne">Namibienne</option>
-				    					    		<option  value="nauruanne" class="nauruanne">Nauruanne</option>
-				    					    		<option  value="neerlandaise" class="neerlandaise">Neerlandaise</option>
-				    					    		<option  value="nepalaise" class="nepalaise">Nepalaise</option>
-				    					    		<option  value="neo-caledonienne" class="neo-caledonienne">Néo-Caledonienne</option>
-				    					    		<option  value="neo-zelandaise" class="neo-zelandaise">Néo-Zelandaise</option>
-				    					    		<option  value="nicaraguayenne" class="nicaraguayenne">Nicaraguayenne</option>
-				    					    		<option  value="nigerianne" class="nigerianne">Nigerianne</option>
-				    					    		<option  value="nigerienne" class="nigerienne">Nigerienne</option>
-				    					    		<option  value="niueenne" class="niueenne">Niueenne</option>
-				    					    		<option  value="nord-coreenne" class="nord-coreenne">Nord-Coréenne</option>
-				    					    		<option  value="norvegienne" class="norvegienne">Norvegienne</option>
-				    					    		<option  value="omanaise" class="omanaise">Omanaise</option>
-				    					    		<option  value="ougandaise" class="ougandaise">Ougandaise</option>
-				    					    		<option  value="ouzbek" class="ouzbek">Ouzbek</option>
-				    					    		<option  value="pakistanaise" class="pakistanaise">Pakistanaise</option>
-				    					    		<option  value="palestienne" class="palestienne">Palestienne</option>
-				    					    		<option  value="paluanne" class="paluanne">Paluanne</option>
-				    					    		<option  value="panameenne" class="panameenne">Panameenne</option>
-				    					    		<option  value="papouane-neoguineenne" class="papouane-neoguineenne">Papouane-neoguineenne</option>
-				    					    		<option  value="paraguayenne" class="paraguayenne">Paraguayenne</option>
-				    					    		<option  value="peruvienne" class="peruvienne">Peruvienne</option>
-				    					    		<option  value="philippine" class="philippine">Philippine</option>
-				    					    		<option  value="polonaise" class="polonaise">Polonaise</option>
-				    					    		<option  value="polynesienne" class="polynesienne">Polynesienne</option>
-				    					    		<option  value="portoricaine" class="portoricaine">Portoricaine</option>
-				    					    		<option  value="portugaise" class="portugaise">Portugaise</option>
-				    					    		<option  value="qatarienne" class="qatarienne">Qatarienne</option>
-				    					    		<option  value="reunionnaise" class="reunionnaise">Réunionnaise</option>
-				    					    		<option  value="roumaine" class="roumaine">Roumaine</option>
-				    					    		<option  value="russe" class="russe">Russe</option>
-				    					    		<option  value="rwandaise" class="rwandaise">Rwandaise</option>
-				    					    		<option  value="salomonienne" class="salomonienne">Salomonienne</option>
-				    					    		<option  value="salvadorienne" class="salvadorienne">Salvadorienne</option>
-				    					    		<option  value="samoa-americaine" class="samoa-americaine">Samoa Américaine</option>
-				    					    		<option  value="samoanne" class="samoanne">Samoanne</option>
-				    					    		<option  value="santomeenne" class="santomeenne">Santomeenne</option>
-				    					    		<option  value="saoudienne" class="saoudienne">Saoudienne</option>
-				    					    		<option  value="senegalaise" class="senegalaise">Senegalaise</option>
-				    					    		<option  value="serbe" class="serbe">Serbe</option>
-				    					    		<option  value="seychelloise" class="seychelloise">Seychelloise</option>
-				    					    		<option  value="sierra-leonaise" class="sierra-leonaise">Sierra-leonaise</option>
-				    					    		<option  value="singapourienne" class="singapourienne">Singapourienne</option>
-				    					    		<option  value="slovaque" class="slovaque">Slovaque</option>
-				    					    		<option  value="slovene" class="slovene">Slovene</option>
-				    					    		<option  value="somalienne" class="somalienne">Somalienne</option>
-				    					    		<option  value="soudanaise" class="soudanaise">Soudanaise</option>
-				    					    		<option  value="sri-lankaise" class="sri-lankaise">Sri-Lankaise</option>
-				    					    		<option  value="sud-africaine" class="sud-africaine">Sud-Africaine</option>
-				    					    		<option  value="sud-coreenne" class="sud-coreenne">Sud-Coréenne</option>
-				    					    		<option  value="sud-soudanaise" class="sud-soudanaise">Sud-Soudanaise</option>
-				    					    		<option  value="suedoise" class="suedoise">Suedoise</option>
-				    					    		<option  value="suisse" class="suisse">Suisse</option>
-				    					    		<option  value="surinamienne" class="surinamienne">Surinamienne</option>
-				    					    		<option  value="swazie" class="swazie">Swazie</option>
-				    					    		<option  value="syrienne" class="syrienne">Syrienne</option>
-				    					    		<option  value="tadjik" class="tadjik">Tadjik</option>
-				    					    		<option  value="taiwanaise" class="taiwanaise">Taiwanaise</option>
-				    					    		<option  value="tanzanienne" class="tanzanienne">Tanzanienne</option>
-				    					    		<option  value="tchadienne" class="tchadienne">Tchadienne</option>
-				    					    		<option  value="tcheque" class="tcheque">Tchèque</option>
-				    					    		<option  value="thailandaise" class="thailandaise">Thailandaise</option>
-				    					    		<option  value="togolaise" class="togolaise">Togolaise</option>
-				    					    		<option  value="tongienne" class="tongienne">Tongienne</option>
-				    					    		<option  value="trinidadienne" class="trinidadienne">Trinidadienne</option>
-				    					    		<option  value="tunisienne" class="tunisienne">Tunisienne</option>
-				    					    		<option  value="turkmene" class="turkmene">Turkmene</option>
-				    					    		<option  value="turque" class="turque">Turque</option>
-				    					    		<option  value="tuvaluanne" class="tuvaluanne">Tuvaluanne</option>
-				    					    		<option  value="ukrainienne" class="ukrainienne">Ukrainienne</option>
-				    					    		<option  value="uruguayenne" class="uruguayenne">Uruguayenne</option>
-				    					    		<option  value="vanuataise" class="vanuataise">Vanuataise</option>
-				    					    		<option  value="venezuelienne" class="venezuelienne">Venezuelienne</option>
-				    					    		<option  value="vietnamienne" class="vietnamienne">Vietnamienne</option>
-				    					    		<option  value="yemenite" class="yemenite">Yemenite</option>
-				    					    		<option  value="zambienne" class="zambienne">Zambienne</option>
-				    					    		<option  value="zimbabweenne" class="zimbabweenne">Zimbabweenne</option>
-
+							  @foreach($nationalite as $nation)
+							  <option  value="{{$nation->valeur}}" class="{{$nation->valeur}}">{{$nation->Nationalite}}</option>
+							  @endforeach 
                               </select>
                               <i class="fa fa-caret-down"></i>
                             </div>
@@ -791,7 +585,7 @@
                             </div>
                           </div>
                         </div>
-                        <div onclick="closeTap(0, compr1)"class="col-md-2">
+                        <div onclick="closeTap(0, compr1)" class="col-md-2">
                           <i class="fas fa-trash-alt"></i>
                         </div>
                       </div>
@@ -896,8 +690,6 @@
       
                     <div name='top' id="job-summery" class="job-summery" style="display: none">
                     <div class="col-12">
-                      
-
                       <div class="row">
                           <div class="col-md-6">
                               <div class="form-group">

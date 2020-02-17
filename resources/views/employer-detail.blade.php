@@ -33,61 +33,24 @@
                     </div>
                     
                     <div class="open-job details-section">
-                      <h4><i data-feather="check-circle"></i>Offres en cours</h4>
+                      <h4><i data-feather="check-circle"></i>Offres d'emploi</h4>
+                      @foreach($posts as $p)
                       <div class="job-list">
                         <div class="body">
                           <div class="content">
-                            <h4><a href="job-details.html">Restaurant Team Member - Crew </a></h4>
+                            <h4><a href="{{route('jobdetail', $p->id)}}">{{$p->titre}} </a></h4>
                             <div class="info">
-                              <span class="office-location"><a href="#"><i data-feather="map-pin"></i>New Orleans</a></span>
-                              <span class="job-type temporary"><a href="#"><i data-feather="clock"></i>Temporary</a></span>
+                              <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{$p->localisation}}</a></span>
+                              <span class="job-type temporary"><a href="#"></i>{{$p->type_contrat}}</a></span>
                             </div>
                           </div>
                           <div class="more">
-                            <div class="buttons">
-                              <a href="#" class="button">Apply Now</a>
-                             
-                            </div>
-                            <p class="deadline">Deadline: Oct 31,  2019</p>
+                            <p class="deadline">Date d'expiration: {{$p->date_exp}}</p>
                           </div>
                         </div>
                       </div>
-                      <div class="job-list">
-                        <div class="body">
-                          <div class="content">
-                            <h4><a href="job-details.html">Restaurant Team Member - Crew </a></h4>
-                            <div class="info">
-                              <span class="office-location"><a href="#"><i data-feather="map-pin"></i>New Orleans</a></span>
-                              <span class="job-type temporary"><a href="#"><i data-feather="clock"></i>Temporary</a></span>
-                            </div>
-                          </div>
-                          <div class="more">
-                            <div class="buttons">
-                              <a href="#" class="button">Apply Now</a>
-                             
-                            </div>
-                            <p class="deadline">Deadline: Oct 31,  2019</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="job-list">
-                        <div class="body">
-                          <div class="content">
-                            <h4><a href="job-details.html">Restaurant Team Member - Crew </a></h4>
-                            <div class="info">
-                              <span class="office-location"><a href="#"><i data-feather="map-pin"></i>New Orleans</a></span>
-                              <span class="job-type temporary"><a href="#"><i data-feather="clock"></i>Temporary</a></span>
-                            </div>
-                          </div>
-                          <div class="more">
-                            <div class="buttons">
-                              <a href="#" class="button">Apply Now</a>
-                              
-                            </div>
-                            <p class="deadline">Deadline: Oct 31,  2019</p>
-                          </div>
-                        </div>
-                      </div>
+                     @endforeach
+                     
                     </div>
                   </div>
                   <div class="col-xl-4 offset-xl-1 col-lg-4">

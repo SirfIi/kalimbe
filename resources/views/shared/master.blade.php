@@ -24,12 +24,44 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CRoboto:300i,400,500" rel="stylesheet">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <!-- Favicon -->
         <link rel="icon" href="{{ asset('images/favicon.png') }}">
         <link rel="apple-touch-icon" href="{{ asset('images/youmann.jpg') }}">
         <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/youmann.jpg') }}">
         <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/youmann.jpg') }}">
+
+        <style>
+          /* Rating Star Widgets Style */
+.rating-stars ul {
+  list-style-type:none;
+  padding:0;
+  
+  -moz-user-select:none;
+  -webkit-user-select:none;
+}
+.rating-stars ul > li.star {
+  display:inline-block;
+  
+}
+
+/* Idle State of the stars */
+.rating-stars ul > li.star > i.fa {
+  font-size:2.5em; /* Change the size of the stars */
+  color:#ccc; /* Color on idle state */
+}
+
+/* Hover state of the stars */
+.rating-stars ul > li.star.hover > i.fa {
+  color:#FFCC36;
+}
+
+/* Selected state of the stars */
+.rating-stars ul > li.star.selected > i.fa {
+  color:#FF912C;
+}
+
+        </style>
 
     </head>
     <body>
@@ -46,16 +78,6 @@
                 <a href="#">
                   <img src="{{ asset('images/youmann - 2.jpg') }}" class="img-fluid" alt="">
                 </a>
-              </div>
-            </div>
-            <div class=" col-md-4 col-lg-4 col-sm-4">
-              <div class="footer-widget widget-about">
-                <h4>About Us</h4>
-                <div class="widget-inner">
-                  <p class="description">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                  <span class="about-contact"><i data-feather="phone-forwarded"></i>+8 246-345-0698</span>
-                  <span class="about-contact"><i data-feather="mail"></i>supportmail@gmail.com</span>
-                </div>
               </div>
             </div>
             <div class="col-md-4 col-lg-4 offset-lg-1 col-sm-4">
@@ -120,8 +142,5 @@
 
 
     <script src="{{ asset('js/custom.js') }}"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>
-    <script src="{{ asset('js/map.js') }}"></script>
     </body>
 </html>

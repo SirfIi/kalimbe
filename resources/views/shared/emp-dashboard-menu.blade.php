@@ -3,7 +3,7 @@
                 <div class="company-info">
                   <div class="thumb">
                     @if($ent[0]->photoUrl)
-                  <img class="image" src="{{asset('images')}}/{{$ent[0]->photoUrl}}"  onerror="this.src='images/briefcase.png';">
+                  <img class="image" src="{{asset('images/$ent[0]->photoUrl')}}"  onerror="this.src='{{asset('images/briefcase.png')}}';">
                   @endif
                   </div>
                   <div class="company-body">
@@ -35,9 +35,9 @@
                     <li class="activeClass"><i class="fas fa-user"></i><a href="{{ url('employer-edit') }}">Editer le Profil</a></li>
                     @endif
 
-                    
-                    <li class="activeClass"><i class="fas fa-clipboard"></i><a href="{{ url('employer-manage-job') }}">Les Offres</a></li>
                     <li class="activeClass"><i class="fas fa-plus-square"></i><a href="{{ url('employer-publish') }}">Publier une Offre</a></li>
+                    <li class="activeClass"><i class="fas fa-clipboard"></i><a href="{{ url('employer-manage-job') }}">Les Offres</a></li>
+                    <li class="activeClass"><i class="fas fa-file"></i><a href="{{ url('employer-candidatures') }}">Les Candidatures</a></li>
                    
                     @if($user->count() > 0 ) 
                       @if($user[0]->type_gest =='master')

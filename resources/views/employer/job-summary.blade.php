@@ -56,23 +56,91 @@
                       
                     </div>
                     <div class="edication-and-experience details-section">
-                      <h4><i data-feather="book"></i>Criteres du poste</h4>
-                      <ul>
+                      <h4><i data-feather="file"></i>Criteres du poste</h4>
+                      {{-- <ul>
                         <li> {{$post->diplome}}  </li>
                         <li> {{$post->domaine_etude}}</li>
                         <li> {{$post->niveau_etude}}</li>
                         <li> {{$post->annee_exp}}</li>
                         <li> {{$post->nationalite}}</li>
-                      </ul>
+                      </ul> --}}
+                      <div class="row">
+												<div class="col-md-9">
+                          <label class="col-md-12 col-form-label"><h6>Domaines de Compétences</h6></label>
+                          <ul>
+                            @foreach($questions as $quest)
+                              @if($quest->titre == "Secteur d'activité")
+                              <li> {{$quest->libele}} </li>
+                              @endif
+                            @endforeach
+                    
+                          </ul>
+                        </div>
+                      </div><br>
+
+                      <div class="row">
+                        <div class="col-md-9">
+                          <label class="col-md-12 col-form-label"><h6>Domaines d'études exigés</h6></label>
+                          <ul>
+                            @foreach($questions as $quest)
+                              @if($quest->titre == "Domaine(s) d'étude")
+                              <li> {{$quest->libele}} </li>
+                              @endif
+                            @endforeach
+                          </ul>
+                        </div>
+                      </div><br>
+
+                      <div class="row">
+                        <div class="col-md-9">
+                          <label class="col-md-12 col-form-label"><h6>Niveau d'études</h6></label>
+                          <ul>
+                            @foreach($questions as $quest)
+                              @if($quest->titre == "Niveau etude")
+                              <li> {{$quest->libele}} </li>
+                              @endif
+                            @endforeach
+                          </ul>
+                        </div>
+                      </div><br>
+
+            
+                      <div class="row">
+                        <div class="col-md-9">
+                          <label class="col-md-12 col-form-label"><h6>Années d'expérience</h6></label>
+                          <ul>
+                            @foreach($questions as $quest)
+                              @if($quest->titre == "Annees experience")
+                              <li> {{$quest->libele}} </li>
+                              @endif
+                            @endforeach
+                          </ul>
+                        </div>
+                      </div><br>
+
+                      <div class="row">
+                        <div class="col-md-9">
+                          <label class="col-md-12 col-form-label"><h6>Nationalité</h6></label>
+                          <ul>
+                            @foreach($questions as $quest)
+                              @if($quest->titre == "Nationalité")
+                              <li> {{$quest->libele}} </li>
+                              @endif
+                            @endforeach
+                          </ul>
+                        </div>
+                      </div><br>
+
+
                     </div><br>
                    
   
                     <div class="other-benifit details-section">
-                    <h4><i data-feather="align-left"></i>Réferences du poste</h4>
+                    <h4><i data-feather="list"></i>Réferences du poste</h4>
                     @foreach($refs as $r)
                       <ul>
                         <li>  {{ $r->skill  }} : {{ $r->comp  }} <br>
-                              Note : {{ $r->level  }} /4 
+                              Note : {{ $r->level  }} /5 
                        </li>       
                       </ul>
                       @endforeach
@@ -85,13 +153,18 @@
                         <h4>Details du poste</h4>
                         <ul>
                           <li><span>Date de publication:</span> {{ date_format(date_create($post->created_at),"d-m-Y")}}  </li>
-                          <li><span>Type de contrat:</span> {{$post->type_contrat}}</li>
-                          <li><span>Expérience requise:</span>{{$post->annee_exp}}</li>
-                          <li><span>Lieu:</span>{{$post->localisation}}</li>
-                          <li><span>Rémuneration:</span>{{$post->remuneration}}</li>
-                          <li><span>Nationalité:</span> {{$post->nationalite}}</li>
                           <li><span>Date limite de soumission:</span> {{ date_format(date_create($post->date_exp),"d-m-Y")}}</li>
-                          
+                          <li><span>Type de contrat:</span> {{$post->type_contrat}}</li>
+                          {{-- <li><span>Expérience requise:</span>{{$post->annee_exp}}</li> --}}
+                          <li><span>Lieu:</span>
+                            @foreach($questions as $quest)
+                             @if($quest->titre == "Lieu du travail")
+                            {{$quest->libele}},
+                            @endif
+                            @endforeach
+                          </li>
+                          <li><span>Rémuneration:</span>{{$post->remuneration}}</li>
+                          {{-- <li><span>Nationalité:</span> {{$post->nationalite}}</li> --}}
                         </ul>
                       </div>
                     </div> 

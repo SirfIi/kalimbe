@@ -39,13 +39,13 @@
                   <a href="{{route('application.accept', ['id_cand'=>$id_cand, 'id_post'=>$id_post])}}" style="background-color: green;">Retenir cette Candidature <i data-feather="check-square"></i></a>
                 </div>
                 @endif
-                @if($hasCv > 0)
+                {{-- @if($hasCv > 0)
                 <div class="download-resume">
                   <a href="{{route('download.file', $id_cand )}}">Telecherger le  CV <i data-feather="download"></i></a>
                 </div>
                 @else
                 <a href="#" style="background-color: #DC143C;">Ce Candidat n'a pas encore charger un CV </a>
-                @endif
+                @endif --}}
               </div>
              
               <div class="details-information section-padding-60">
@@ -181,7 +181,10 @@
                       </div>
                   </div>   <br>
                   </div>
+                  
+                  @if($refs->count()>0)
                   <h6><i data-feather="feather"></i>Compétences Personnelles</h6>
+                  @endif
                   @foreach($refs as $ref)  
                     <div class="professonal-skill details-section">
                       <div class="progress-group">
@@ -199,9 +202,33 @@
                       </div>
                     </div>
                   @endforeach
-                  <div class="col-xl-4 offset-xl-1 col-lg-4">
-      
-                  </div>
+                  @if($cv || $ltr || $doc)
+                  <br><br><h6> Télécharger les fichiers du candidat </h6><br>
+                  @endif
+                  <div class="col-xl-6 offset-xl-1 col-lg-4">
+                      @if($cv)
+                        <a href="{{route('download.file', $cv->id)}}">
+                          <strong>CV: </strong> {{$cv->title}}
+                          <i data-feather="download"></i>
+                        </a>
+                      @endif
+                  </div><br>
+                  <div class="col-xl-6 offset-xl-1 col-lg-4">
+                      @if($ltr)
+                        <a href="{{route('download.file', $ltr->id)}}">
+                          <strong>Lettre de motivation: </strong> {{$ltr->title}}
+                          <i data-feather="download"></i>
+                        </a>
+                      @endif
+                  </div><br>
+                  <div class="col-xl-6 offset-xl-1 col-lg-4">
+                      @if($doc)
+                        <a href="{{route('download.file', $doc->id)}}">
+                          <strong>Autre document: </strong> {{$doc->title}}
+                          <i data-feather="download"></i>
+                        </a>
+                      @endif
+                  </div><br>
                 </div>
               </div>
              

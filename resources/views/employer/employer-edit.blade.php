@@ -20,7 +20,7 @@
 					<div class="dashboard-section upload-profile-photo"  style="display: none">
 						<div class="update-photo">
 						<img class="image" src="{{asset('images')}}/{{ $ent[0]->photoUrl }}" onerror="this.src='images/briefcase.png';">
-						<input type="text" id="image" name="image_name" value="{{ $ent[0]->photoUrl }}" >
+						<input type="text" id="image_name" name="image_name" value="{{ $ent[0]->photoUrl }}" >
 						</div>
 					</div>
 					
@@ -430,5 +430,17 @@
           </div>
         </div>
       </div>
-    </div>
+	</div>
+	
+	<script type="text/javascript">
+		function sizeValidation(){
+			var img= document.getElementById("image");
+			console.log(img.files[0].size);
+			if(img.files[0].size > 2000000)
+			{
+				alert("L'image est trop grande"); 
+				document.getElementById('image').value = "";
+			}
+		}
+    </script>
 @endsection

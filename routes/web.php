@@ -16,7 +16,9 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::get('/', function () {
 
     $Allcountries = \App\Country::all();
-    $AllJobs = \App\Post::where('status', '=', 1)->orderBy('created_at', 'DESC')->get();
+    $AllJobs = \App\Post::where('status', '=', 1)->orderBy('created_at', 'DESC')
+      // ->where('date_exp','>', date('Y-m-d H:i:s'))
+    ->get();
     $jobCount = \App\Post::where('status', '=', 1)->count();
     $empCount = \App\User::where('type', '=', 20)->count();
 
@@ -113,17 +115,39 @@ Route::get('employer-manage-job', function () {
     ->with('all', $Allcountries);
 });
 
+Route::get('employer-candidatures', function () {
+    $Allcountries = \App\Country::all();
+    $user = \App\Gest_ent::where('id_user', '=', Auth::user()->id )->get();
+    $ent = \App\User::where('id', '=', Auth::user()->parent_id )->get();
+    $cand = \App\User::where('type', '=', 10 )->paginate(5);
+
+    $cand = DB::table('resumes')
+    ->select('resumes.id_cand as id', 'resumes.photoUrl as photoUrl', 'resumes.nom as name', 'resumes.domaine_etude as secteur','resumes.residence as ville', 'candidatures.id as candidature_id')
+    ->join('candidatures' , 'candidatures.id_cand' , '=' , 'resumes.id_cand')
+    ->where('candidatures.id_ent', '=', Auth::user()->parent_id)->paginate(5);
+
+    return view('employer.candidatures')
+    ->with('ent', $ent)
+    ->with('user', $user)
+    ->with('cand', $cand)
+    ->with('all', $Allcountries);
+});
+
 Route::get('employer/manage-job',array('as'=>'employer.manage-job','uses'=>'employer@managejob'));
 
 Route::get('employer-publish', function () {
     $Allcountries = \App\Country::all();
+    $experinces = \App\experience::all();
     $user = \App\Gest_ent::where('id_user', '=', Auth::user()->id )->get();
     $ent = \App\User::where('id', '=', Auth::user()->parent_id )->get();
+    $nationalite = \App\Nationalite::orderBy('valeur', 'asc')->get();
 
-    return view('employer.employer-publish')
+    return view('employer.employer-publish2')
     ->with('user', $user)
     ->with('ent', $ent)
-    ->with('all', $Allcountries);
+    ->with('all', $Allcountries)
+    ->with('experinces', $experinces)
+    ->with('nationalite', $nationalite);
 });
 
 Route::get('employer-job-summary', function () {
@@ -133,19 +157,13 @@ Route::get('employer-job-summary', function () {
 });
 
 Route::get('employer/job-summary/{id}',array('as'=>'employer.job-summary','uses'=>'employer@jobsum'));
-
 Route::get('employer/job-active/{id}',array('as'=>'employer.job-active','uses'=>'employer@jobActive'));
 Route::get('employer/job-desactive/{id}',array('as'=>'employer.job-desactive','uses'=>'employer@jobDeSactive'));
-
 Route::get('employer/job-edit/{id}',array('as'=>'employer.job-edit','uses'=>'employer@jobEdit'));
-
+Route::get('delete/reference/{id}',array('as'=>'ref.delete','uses'=>'employer@delete_ref'));
 Route::post('employer/job-update/{id}',array('as'=>'employer.job-update','uses'=>'employer@jobUpdate'));
-
 Route::get('employer/job-delete/{id}',array('as'=>'employer.job-delete','uses'=>'employer@deletePost'));
-
-
 Route::get('candidate-dashboard', function () {
-
     $cand = DB::table('candidatures')
                 ->select('candidatures.id as candidature_id',
                 'candidatures.status as cand_status',
@@ -240,6 +258,7 @@ Route::post('lettre/upload', array('as'=>'lettre.upload','uses'=>'employer@uploa
 
 Route::post('candidat/apply',array('as'=>'candidat.apply','uses'=>'employer@apply'));
 Route::post('unknown/apply',array('as'=>'unknown.apply','uses'=>'employer@unknown_apply'));
+Route::post('nationalite/apply',array('as'=>'nationalite.apply','uses'=>'employer@nationalite_apply'));
 Route::get('jobdetail/{id}',array('as'=>'jobdetail','uses'=>'employer@jobDetail'));
 
 Route::get('employer-manage-candidate', function () {
@@ -249,6 +268,7 @@ Route::get('employer-manage-candidate', function () {
 });
 
 Route::get('employer/manage-candidate/{id}',array('as'=>'employer.manage-candidate','uses'=>'employer@manage_candidate'));
+Route::get('employer/allcandidates/{id}',array('as'=>'employer.allcandidates','uses'=>'employer@allcandidates'));
 
 Route::get('job-detail/{id_cand}/{id_post}',array('as'=>'shortlisted.detail','uses'=>'employer@shortlistedjobDetail'));
 
@@ -393,3 +413,5 @@ Route::get('conditions/recruteurs', function () {
     return \View::make('conditions.recruteurs')
     ->with('all', $Allcountries);
 });
+
+Route::get('/filtre','employer@filtre');

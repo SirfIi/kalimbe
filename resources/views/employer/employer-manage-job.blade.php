@@ -30,7 +30,8 @@
                     @foreach($jobs as $j)
                       <tr class="job-items">
                         <td class="title">
-                          <h5><a href="#">{{$j->titre}}</a></h5>
+
+                          <h5><a href="{{url('jobdetail', $j->id)}}">{{$j->titre}}</a></h5>
                           <div class="info">
                             <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{$j->localisation}}</a></span>
                             @if($j->type_contrat == 'CDD Temps plein')
