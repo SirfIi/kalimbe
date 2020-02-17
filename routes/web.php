@@ -142,7 +142,7 @@ Route::get('employer-publish', function () {
     $ent = \App\User::where('id', '=', Auth::user()->parent_id )->get();
     $nationalite = \App\Nationalite::orderBy('valeur', 'asc')->get();
 
-    return view('employer.employer-publish2')
+    return view('employer.employer-publish')
     ->with('user', $user)
     ->with('ent', $ent)
     ->with('all', $Allcountries)
