@@ -259,7 +259,7 @@ class employer extends Controller
         //   'secteur' => $data['secteur'],
             'type_contrat' => $data['type_contrat'],
             'remuneration' => $data['salaire'],
-            'mobilite' => $data['mobilite'],
+        //    'mobilite' => $data['mobilite'],
         //   'localisation' => $data['localisation'],
             'date_publication' => date("Y-m-d H:i:s"),
             'date_exp' => $data['date_exp'],
@@ -420,19 +420,20 @@ class employer extends Controller
         );
         Question::insert($info);
 
-     
-        // $mobilite = $data->mobilite;
-        // $info = array();
-        // $info = array(
-        //     'titre' => 'Mobilité',
-        //     'libele' => $mobilite,
-        //     'id_post' => $id,
-        //     'id_ent' => Auth::user()->parent_id,
-        //     'valeur' => 100,
-        //     'coef' => $data->val_mobilite,
-        //     'Eliminatoire' =>  $elim_niv_etudes
-        // ); 
-        // Question::insert($info);
+        $elim_mob = 0;
+        if($data->has('elim_mob')) $elim_mob = 1;
+        $mobilite = $data->mobilite;
+        $info = array();
+        $info = array(
+            'titre' => 'Mobilité',
+            'libele' => $mobilite,
+            'id_post' => $id,
+            'id_ent' => Auth::user()->parent_id,
+            'valeur' => 100,
+            'coef' => $data->val_mobilite,
+            'Eliminatoire' =>  $elim_mob
+        ); 
+        Question::insert($info);
 
         for($count = 0; $count < count( $skill); $count++){
             $info = array();
@@ -1149,6 +1150,30 @@ class employer extends Controller
 
     public function unknown_apply(Request $data){
             $id = time();
+
+            $user = User::create([
+                'name' => $data['nom'],
+                'email' => $data['email'],
+                'site' =>  '',
+                'secteur' =>  $data['domaine_etude'][0],
+                'description' =>  '',
+                'taille' =>  1,
+                'adresse' => '',
+                'ville' =>  '',
+                'pays' =>  $data['residence'],
+                'tel' =>  $data['tel'],
+                'checked2' => 'checked',
+                'type' =>   10,
+                'password' => Hash::make($data['password']),
+            ]);
+
+            DB::table('users')
+            ->where('id', $user->id )
+            ->update([
+            'parent_id' => $user->id,
+            ]);
+    
+
         Resume::create([
             'nom' => $data['nom'],
             'email' => $data['email'],
@@ -1158,7 +1183,7 @@ class employer extends Controller
             'remuneration' => $data['remuneration'],
             'motivation' => $data['motivation'],
             'disponibilite' => $data['disponibilite'],
-            'domaine_etude' => $data['domaine_etude'],
+            'domaine_etude' => $data['domaine_etude'][0],
             'mobilite' => $data['mobilite'],
             'niveau_etude' => $data['niveau_etude'],
             'annee_exp' => $data['annee_exp'],
@@ -1166,7 +1191,7 @@ class employer extends Controller
             'nationalite' => $data['nationalite'],
             'residence' => $data['residence'],
             'date_naiss' => $data['date_naiss'],
-            'id_cand' => $id,
+            'id_cand' =>  $user->id,
             'type_ab' => 'random',
         ]);
 
@@ -1189,110 +1214,252 @@ class employer extends Controller
             $cv = $data['file_defaut_cv'];
         }
 
-        if($data->hasFile('file_ltr')){
+        // if($data->hasFile('file_ltr')){
        
-            // $res= \App\File::where('user_id','=', Auth::user()->id)->delete();
-            $uploadedFile = $data->file('file_ltr');
-            $filename = time().$uploadedFile->getClientOriginalName();
-            $cv = $filename;
+        //     // $res= \App\File::where('user_id','=', Auth::user()->id)->delete();
+        //     $uploadedFile = $data->file('file_ltr');
+        //     $filename = time().$uploadedFile->getClientOriginalName();
+        //     $cv = $filename;
  
-             $uploadedFile->move(public_path().'/files/', $filename);
-            //  $upload = new File;
-            //  $upload->title = $filename;
-            //  $upload->type = 'LM';
-            //  $upload->user_id = $id;
-            //  $upload->user()->associate(auth()->user());
-            //  $upload->save();
-            File::create([
-                'user_id' => $id,
-                'title' => $filename,
-                'type' =>'LM'
-            ]);
-         }
+        //      $uploadedFile->move(public_path().'/files/', $filename);
+        //     //  $upload = new File;
+        //     //  $upload->title = $filename;
+        //     //  $upload->type = 'LM';
+        //     //  $upload->user_id = $id;
+        //     //  $upload->user()->associate(auth()->user());
+        //     //  $upload->save();
+        //     File::create([
+        //         'user_id' => $id,
+        //         'title' => $filename,
+        //         'type' =>'LM'
+        //     ]);
+        //  }
 
-         if($data->hasFile('file_doc')){
-            // $res= \App\File::where('user_id','=', Auth::user()->id)->delete();
-            $uploadedFile = $data->file('file_doc');
-            $filename = time().$uploadedFile->getClientOriginalName();
-            $cv = $filename;
+        //  if($data->hasFile('file_doc')){
+        //     // $res= \App\File::where('user_id','=', Auth::user()->id)->delete();
+        //     $uploadedFile = $data->file('file_doc');
+        //     $filename = time().$uploadedFile->getClientOriginalName();
+        //     $cv = $filename;
  
-             $uploadedFile->move(public_path().'/files/', $filename);
-            //  $upload = new File;
-            //  $upload->title = $filename;
-            //  $upload->user_id = $id;
-            //  $upload->type = 'DOC';
-            //  $upload->user()->associate(auth()->user());
-            //  $upload->save();
+        //      $uploadedFile->move(public_path().'/files/', $filename);
+        //     //  $upload = new File;
+        //     //  $upload->title = $filename;
+        //     //  $upload->user_id = $id;
+        //     //  $upload->type = 'DOC';
+        //     //  $upload->user()->associate(auth()->user());
+        //     //  $upload->save();
 
-            File::create([
-                'user_id' => $id,
-                'title' => $filename,
-                'type' =>'DOC'
-            ]);
-         }
+        //     File::create([
+        //         'user_id' => $id,
+        //         'title' => $filename,
+        //         'type' =>'DOC'
+        //     ]);
+        //  }
+
+        $eliminatoire = 0;
+        $secteur = Question::where('id_post',  $data['id_post'])->where('titre', 'Secteur')->get();
+        $secteur_coef =  $secteur[0]->coef;
+        $secteur_apply = $data->domaine_etude;
+        $sect_note = 0;
+        $secteurs = '';
+        
+        for($i = 0; $i < count($secteur_apply); $i++){
+            for($j = 0; $j < count( $secteur); $j++){
+                if( $secteur[$j]->libele === $secteur_apply[$i]){
+                    $sect_note = 100;
+                    $secteurs .= $secteur_apply[$i].'^';
+                break;
+                }
+            }
+        };
+     //   $sect_note = ($sect_note/count( $secteur))*100;
+
+        if($secteur[0]->Eliminatoire == 1 && $sect_note<100) $eliminatoire = 1;
+      //  echo $secteurs;
+
+        $niveau_etude = Question::where('id_post',  $data['id_post'])->where('titre', 'Niveau etude')->get();
+        $niv_coef =  $niveau_etude[0]->coef;
+        $niv_apply = $data->niveau_etude;
+        $niv_note = 0;
+        
+        for($i = 0; $i < count($niveau_etude); $i++){
+            if( $niveau_etude[$i]->libele === $niv_apply){
+                $niv_note = 100;
+                break;
+            }
+        };
+
+        if($niveau_etude[0]->Eliminatoire == 1 && $niv_note < 100) $eliminatoire = 1;
+        //echo $niv_note;
+
+        $annees_exp = Question::where('id_post',  $data['id_post'])->where('titre', 'Annees experience')->get();
+        $exp_coef =  $annees_exp[0]->coef;
+        $exp_apply = $data->annee_exp;
+        $exp_note = 0;
+        
+        for($i = 0; $i < count($annees_exp); $i++){
+            if( $annees_exp[$i]->libele === $exp_apply){
+                $exp_note = 100;
+                break;
+            }
+        };
+        if($annees_exp[0]->Eliminatoire == 1 && $exp_note < 100) $eliminatoire = 1;
+      //  echo $exp_note;
+
+        $nationalite = Question::where('id_post',  $data['id_post'])->where('titre', 'Nationalité')->get();
+        $nat_coef =  $nationalite[0]->coef;
+        $nat_apply = $data->nationalite;
+        $nat_note = 0;
+        
+        for($i = 0; $i < count($nationalite); $i++){
+            if( $nationalite[$i]->libele === $nat_apply || $nationalite[$i]->libele === "Toute Nationalité" ){
+                $nat_note = 100;
+                break;
+            }
+        };
+        if($nationalite[0]->Eliminatoire == 1 && $nat_note < 100) $eliminatoire = 1;
+      //  echo $nat_note;
+
+        $residence = Question::where('id_post',  $data['id_post'])->where('titre', 'Lieu du travail')->get();
+        $resid_coef =  $residence[0]->coef;
+        $resid_apply = $data->residence;
+        $resid_note = 0;
+       
+        for($i = 0; $i < count($residence); $i++){
+            if( $residence[$i]->libele === $resid_apply){
+                $resid_note = 100;
+                break;
+            }
+        };
+        if($residence[0]->Eliminatoire == 1 && $resid_note < 100) $eliminatoire = 1;
+      //  echo $resid_note;
+
+        $mobilite = Question::where('id_post',  $data['id_post'])->where('titre', 'Mobilité')->get();
+        $mob_coef =  $mobilite[0]->coef;
+        $mob_apply = $data->mobilite;
+        $mob_note = 0;
+
+       // for($i = 0; $i < count($mobilite); $i++){
+            if( $mobilite[0]->libele === $mob_apply){
+                $mob_note = 100;
+            }
+      //  };
+        if($mobilite[0]->Eliminatoire == 1 && $mob_note < 100) $eliminatoire = 1;
+       // echo $mob_note;
+
+        $dispo = Question::where('id_post',  $data['id_post'])->where('titre', 'disponibilite')->get();
+        $dispo_coef =  $dispo[0]->coef;
+        $dispo_apply = $data->disponibilite;
+        $dispo_note = 0;
+
+        if( $dispo[0]->libele === $dispo_apply){
+            $dispo_note = 100;
+        }
+        if($dispo[0]->Eliminatoire == 1 && $dispo_note < 100) $eliminatoire = 1;
+      //  echo $dispo_note;
+
+        $coef_total = $dispo_coef + $mob_coef +  $resid_coef + $nat_coef + $exp_coef + $niv_coef + $secteur_coef;
+        $note_finale = (($dispo_note * $dispo_coef )+($mob_note * $mob_coef)+($resid_note * $resid_coef)+( $nat_note * $nat_coef)+($exp_note * $exp_coef)+($niv_note * $niv_coef)+($sect_note * $secteur_coef))/$coef_total;
+       
 
         Candidature::create([
             'id_post' => $data['id_post'],
-            'id_cand' => $id,
+            'id_cand' => $user->id,
             'id_ent' => $data['id_ent'],
+            'secteur' => $secteurs,
+        //    'domaine_etude' =>,
+            'niveau_etude' => $niv_apply,
+            'annee_exp' => $exp_apply,
+            'nationalite' => $nat_apply,
+            'residence' => $resid_apply,
+            'dernier_poste' => $data->dernier_poste,
+            'rspon_dernier_poste' => $data->responsabilite,
+            'motivation' => $data->motivation,
+            'disponibilte' => $dispo_apply,
+            'mobilite' => $mob_apply,
+            'pretention_sal' => $data->remuneration,
+            'note_secteur' => $sect_note,
+            'note_niveau' => $niv_note,
+            'note_exp' =>  $exp_note,
+            'note_nationalite' => $nat_note,
+            'note_residence' => $resid_note,
+            'note_dispo' => $dispo_note,
+            'note_mob' => $mob_note,
+            'note' => $note_finale,
+            'eliminatoire' => $eliminatoire,
             'cv' => $cv,
             'status' => 1,
         ]);
 
-        if($data['comp_1'] != ''){
-            Ref_cand::create([
-                'id_post' => $data['id_post'],
-                'id_cand' => $id,
-                'skill' => $data['skill_1'],
-                'comp' => $data['comp_1'],
-                'level' => $data['level_1'],
-            ]);
-        }
 
-        if($data['comp_2'] != ''){
-            Ref_cand::create([
-                'id_post' => $data['id_post'],
-                'id_cand' => $id,
-                'skill' => $data['skill_2'],
-                'comp' => $data['comp_2'],
-                'level' => $data['level_2'],
-            ]);
-        }
+    // //    echo $data->customRange2[0];
+    //     $customRange2 = $data->customRange2;
+    //     $ref_id = $data->ref_id;
+    //     $comp = $data->comp;
 
-        if($data['comp_3'] != ''){
-            Ref_cand::create([
-                'id_post' => $data['id_post'],
-                'id_cand' => $id,
-                'skill' => $data['skill_3'],
-                'comp' => $data['comp_3'],
-                'level' => $data['level_3'],
-            ]);
-        }
 
-        if($data['comp_4'] != ''){
-            Ref_cand::create([
-                'id_post' => $data['id_post'],
-                'id_cand' => $id,
-                'skill' => $data['skill_4'],
-                'comp' => $data['comp_4'],
-                'level' => $data['level_4'],
-            ]);
-        }
+        // Candidature::create([
+        //     'id_post' => $data['id_post'],
+        //     'id_cand' => $id,
+        //     'id_ent' => $data['id_ent'],
+        //     'cv' => $cv,
+        //     'status' => 1,
+        // ]);
 
-        if($data['comp_5'] != ''){
-            Ref_cand::create([
-                'id_post' =>  $data['id_post'],
-                'id_cand' => $id,
-                'skill' => $data['skill_5'],
-                'comp' => $data['comp_5'],
-                'level' => $data['level_5'],
-            ]);
-        }
+        // if($data['comp_1'] != ''){
+        //     Ref_cand::create([
+        //         'id_post' => $data['id_post'],
+        //         'id_cand' => $id,
+        //         'skill' => $data['skill_1'],
+        //         'comp' => $data['comp_1'],
+        //         'level' => $data['level_1'],
+        //     ]);
+        // }
+
+        // if($data['comp_2'] != ''){
+        //     Ref_cand::create([
+        //         'id_post' => $data['id_post'],
+        //         'id_cand' => $id,
+        //         'skill' => $data['skill_2'],
+        //         'comp' => $data['comp_2'],
+        //         'level' => $data['level_2'],
+        //     ]);
+        // }
+
+        // if($data['comp_3'] != ''){
+        //     Ref_cand::create([
+        //         'id_post' => $data['id_post'],
+        //         'id_cand' => $id,
+        //         'skill' => $data['skill_3'],
+        //         'comp' => $data['comp_3'],
+        //         'level' => $data['level_3'],
+        //     ]);
+        // }
+
+        // if($data['comp_4'] != ''){
+        //     Ref_cand::create([
+        //         'id_post' => $data['id_post'],
+        //         'id_cand' => $id,
+        //         'skill' => $data['skill_4'],
+        //         'comp' => $data['comp_4'],
+        //         'level' => $data['level_4'],
+        //     ]);
+        // }
+
+        // if($data['comp_5'] != ''){
+        //     Ref_cand::create([
+        //         'id_post' =>  $data['id_post'],
+        //         'id_cand' => $id,
+        //         'skill' => $data['skill_5'],
+        //         'comp' => $data['comp_5'],
+        //         'level' => $data['level_5'],
+        //     ]);
+        // }
 
         $id_post = $data['id_post'];
         $post = Post::findOrFail($id_post);
         $resume = Resume::where('id_cand',  $id)->first();
-        //Mail::to($resume->email)->send(new CandidatureMail($resume, $post));
+        // //Mail::to($resume->email)->send(new CandidatureMail($resume, $post));
 
         $status = 'Votre candidature a été enregistré avec succès';
 

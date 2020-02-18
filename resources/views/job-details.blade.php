@@ -161,7 +161,7 @@
             </div>
           </div>
         </div>
-        @if(Auth::user()->type == 10)
+        
         <div class="apply-popup">
           @guest
                     <div class="modal fade" id="apply-popup-id-2" tabindex="-1" role="dialog" aria-hidden="true">
@@ -174,7 +174,7 @@
                             </button>
                           </div>
                           <div class="jy-alert info-alert">
-                            <p> Vous ètes en ce moment en train de candidater pour le poste <strong>{{$job[0]->titre}}</strong> de l'entreprise <strong> {{$job[0]->user->name}} </strong>   </p>
+                            <p> Vous ètes en ce moment en train de postuler pour le poste <strong>{{$job[0]->titre}}</strong> de l'entreprise <strong> {{$job[0]->user->name}} </strong>   </p>
                           </div>
                          
                           <div class="modal-body">
@@ -317,7 +317,7 @@
                                       <div class="col-md-12">
                                         <div class="form-group">
                                           <div class="form-group">
-                                            <select name="domaine_etude[]" class="form-control" required>
+                                            <select multiple name="domaine_etude[]" class="form-control" style="height:80px" required>
                                             <option  value="" class="administration">Domaine d'étude</option>
                                               <option  value="administration" class="administration">Administration</option>
                                               <option  value="assurance-qualite" class="assurance-qualite">Assurance qualité</option>
@@ -475,7 +475,7 @@
                               </div>
                           </div>
                           <div class="col-md-6">
-                              <label class="col-md-12 col-form-label"> Quelles sont vos prétentions salariales(annuelle)? </label>
+                              <label class="col-md-12 col-form-label"> Quelle est votre prétention salariale (annuelle)? </label>
                               <div class="col-md-12">
                                 <div class="form-group">
                                   <div class="form-group">
@@ -573,7 +573,7 @@
                       </div>
                     </div>
                 @else
-
+                @if(Auth::user()->type == 10)
                 {{-- <div class="modal fade" id="apply-popup-id" tabindex="-1" role="dialog" aria-hidden="true"> --}}
                 <div class="modal fade" id="apply-popup-id-2" tabindex="-1" role="dialog" aria-hidden="true">
                       <div class="modal-dialog" role="document">
@@ -942,10 +942,11 @@
                         </div>
                       </div>
                     </div>
+                    @endif
                 @endguest
                   </div>
       </div>
-      @endif
+      
     </div>
     <!-- Candidates Details End -->
     <script type="text/javascript">

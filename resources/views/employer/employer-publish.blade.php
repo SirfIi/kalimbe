@@ -49,16 +49,6 @@
 													<input name ="date_exp" type="date" required class="form-control">
 												</div>
 											</div>
-											<div class="col-md-4">
-											<div class="form-group">
-												<select name="mobilite" class="form-control">
-													<option value="">Mobilité liée au poste</option>
-													<option value="oui">Oui</option>
-													<option value="non">Non</option>
-												</select>
-												<i class="fa fa-caret-down"></i>
-											</div>
-										</div>
 									</div><br>
 								 <div class="row">
 										<label class="col-md-3 col-form-label">Lieu du travail</label>
@@ -651,16 +641,54 @@
 														</div>
 													</section>
 												</div>
-														<div class="col-md-2">
-                                    				<div class="mt-0 terms">
-                                                        <input class="custom-radio" type="checkbox" id="radio-d" name="elim_dispo">
-                                                        <label for="radio-d">
-                                                          <span class="dot"></span> Éliminatoire
-                                                        </label>
-                                                      </div>
-													</div>  
-                        					</div>
-                      					</div>
+												<div class="col-md-2">
+                          <div class="mt-0 terms">
+                            <input class="custom-radio" type="checkbox" id="radio-d" name="elim_dispo">
+                            <label for="radio-d">
+                              <span class="dot"></span> Éliminatoire
+                            </label>
+                          </div>
+                        </div>  
+                          <label class="col-md-3 col-form-label">Mobilité liée au poste</label>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <select name="mobilite" class="form-control">
+                                <option value="non">Non</option>
+                                <option value="oui">Oui</option>
+                                
+                              </select>
+                              <i class="fa fa-caret-down"></i>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <section class='rating-widget'>
+                              <!-- Rating Stars Box -->
+                              <div class='rating-stars text-center' style="font-size:10px;">
+                                <ul id='stars_mob'>
+                                <li class='star' title='Poor' data-value='1'>
+                                  <i class='fa fa-star fa-fw'></i>
+                                </li>
+                                <li class='star' title='Fair' data-value='2'>
+                                  <i class='fa fa-star fa-fw'></i>
+                                </li>
+                                <li class='star' title='Good' data-value='3'>
+                                  <i class='fa fa-star fa-fw'></i>
+                                </li>
+                                </ul>
+                                <input type="text" name="val_mobilite" id="val_mobilite" style="display: none">
+                              </div>
+                            </section>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="mt-0 terms">
+                              <input class="custom-radio" type="checkbox" id="radio-d" name="elim_mob">
+                              <label for="radio-d">
+                                <span class="dot"></span> Éliminatoire
+                              </label>
+                            </div>
+                          </div> 
+                        </div>
+                      </div>
 									</div>
 									<br>
 										<h6>Exigences souhaitées</h6><br>
@@ -862,7 +890,7 @@
     }
   });
 
-  $('#stars_mobilite li').on('click', function(){
+  $('#stars_mob li').on('click', function(){
     var onStar = parseInt($(this).data('value'), 10); // The star currently selected
     var stars = $(this).parent().children('li.star');
 	var input_val_nat = document.getElementById('val_mobilite');
